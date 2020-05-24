@@ -4,12 +4,40 @@
 
 ### Keybinds
 
-| Binding     | When     | Action                           |
-|-------------|----------|----------------------------------|
-| `CTRL+o`    | `NORMAL` | Toggle nerdtree                  |
-| `\c<space>` | `NORMAL` | Flip comment for current line(s) |
-| `\cs`       | `NORMAL` | Block comment selection          |
-| `:Tlist`    | `NORMAL` | List all variables and methods   |
+| Binding        | When     | Action                           |
+|----------------|----------|----------------------------------|
+| `CTRL+o`       | `NORMAL` | Toggle nerdtree                  |
+| `\c<space>`    | `NORMAL` | Flip comment for current line(s) |
+| `\cs`          | `NORMAL` | Block comment selection          |
+| `\ww`          | `NORMAL` | Open personal wiki               |
+| `CTRL+SHIFT+i` | `NORMAL` | Auto-format code                 |
+
+
+### Commands
+
+Gradle:
+
+| Command        | Action                        |
+|----------------|-------------------------------|
+| `:GradleBuild` | Build project with gradle     |
+| `:GradleTest`  | Run project tests with gradle |
+| `:GradleClean` | Clean project with gradle     |
+
+FRC:
+
+| Command       | Action                              |
+|---------------|-------------------------------------|
+| `FRCDeploy`   | Deploy code to robot                |
+| `FRCSimulate` | Run `./run-simulation.sh` if exists |
+
+Misc:
+
+| Command     | Action                         |
+|-------------|--------------------------------|
+| `:Tlist`    | List all variables and methods |
+| `:ViewDef`  | View variable definition       |
+| `:ViewImpl` | View variable implementation   |
+| `:ViewRef`  | View variable references       |
 
 
 ## Plugins
@@ -24,3 +52,4 @@
  - [nerd-commenter](https://github.com/preservim/nerdcommenter#default-mappings)
  - [ack](https://github.com/mileszs/ack.vim#usage)
  - [syntastic](https://github.com/vim-syntastic/syntastic#introduction)
+ - [easymotion](https://github.com/easymotion/vim-easymotion#usage-example-for-the-base-features)

@@ -6,9 +6,38 @@
 " Enable mouse usage
 set mouse=a
 
+" Tab size
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Force VIM to use system clipboard
+set clipboard=unnamedplus
+
 " ~~~~ Keybinds ~~~~
 
+" Open file explorer
 map <C-o> :NERDTreeToggle<CR>
+
+" Format Code
+map <C-S-i> :YcmCompleter Format<CR>
+
+" ~~~~ Commands ~~~~
+
+" Gradle
+command GradleBuild :!./gradlew build
+command GradleTest :!./gradlew test
+command GradleClean :!./gradlew clean
+
+" FRC
+command FRCDeploy :!./gradlew deploy
+command FRCSimulate :!./run-simulation.sh
+
+" Code navigation macros
+command ViewDef :YcmCompleter GoToDefinition
+command ViewImpl :YcmCompleter GoToImplementation
+command ViewRef :YcmCompleter GoToReferences
+
 
 " ~~~~ Plugins ~~~~
 " Don't forget to run :PlugInstall in vim
@@ -30,7 +59,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 
 " vim-surround
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 " nerdtree
 Plug 'preservim/nerdtree'
@@ -42,9 +71,6 @@ Plug 'editorconfig/editorconfig-vim'
 " Emmet
 Plug 'mattn/emmet-vim'
 
-" ALE
-" Plug 'dense-analysis/ale'
-
 " GitGutter
 Plug 'airblade/vim-gitgutter'
 
@@ -55,7 +81,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 
 " Rainbow
-" Plug 'luochen1990/rainbow'
 Plug 'kien/rainbow_parentheses.vim'
 
 " ACK
@@ -64,8 +89,32 @@ Plug 'mileszs/ack.vim'
 " Tlist
 Plug 'vim-scripts/taglist.vim'
 
-" Syntastic
-Plug 'scrooloose/syntastic'
+" C++ Highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Unit tests
+Plug 'janko-m/vim-test'
+
+" Workspaces
+Plug 'thaerkh/vim-workspace'
+
+" Java utils
+Plug 'rustushki/javaimp.vim'
+
+" Gradle support
+Plug 'tfnico/vim-gradle'
+
+" Autocomplete
+Plug 'valloric/youcompleteme'
+
+" Easy motion
+Plug 'easymotion/vim-easymotion'
+
+" Bracket pairs
+Plug 'jiangmiao/auto-pairs'
+
+" Personal Wiki
+Plug 'vimwiki/vimwiki'
 
 " Initialize plugin system
 call plug#end()
@@ -73,7 +122,9 @@ call plug#end()
 " ~~~~ Plugin Config ~~~~
 
 " Enable filetype plugins
+set nocompatible
 filetype plugin on
+syntax on
 
 " Start nerdtree on opening vim in a folder
 autocmd StdinReadPre * let s:std_in=1
@@ -103,17 +154,14 @@ let g:NERDToggleCheckAllLines = 1
 " Enable rainbow
 let g:rainbow_active = 1
 
-" Syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Rainbow
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" C++
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1

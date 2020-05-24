@@ -2,6 +2,7 @@
 
 echo "Installing neovim"
 sudo apt install neovim -y
+python3 -m pip install pynvim
 
 echo "Downloading vim-plug for neovim"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
