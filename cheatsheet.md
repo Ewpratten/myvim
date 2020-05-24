@@ -38,6 +38,7 @@ Misc:
 | `:ViewDef`  | View variable definition       |
 | `:ViewImpl` | View variable implementation   |
 | `:ViewRef`  | View variable references       |
+| `:MVCS`     | Open my vim cheatsheet in the browser |
 
 
 ## Plugins

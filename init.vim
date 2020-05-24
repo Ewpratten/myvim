@@ -28,6 +28,9 @@ map <C-S-i> :YcmCompleter Format<CR>
 
 " ~~~~ Commands ~~~~
 
+" MyVIM
+command MVCS :!xdg-open https://github.com/Ewpratten/myvim/blob/master/cheatsheet.md
+
 " Gradle
 command GradleBuild :!./gradlew build
 command GradleTest :!./gradlew test
