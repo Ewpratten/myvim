@@ -53,3 +53,4 @@ Misc:
  - [ack](https://github.com/mileszs/ack.vim#usage)
  - [syntastic](https://github.com/vim-syntastic/syntastic#introduction)
  - [easymotion](https://github.com/easymotion/vim-easymotion#usage-example-for-the-base-features)
+ - [vimwiki](https://github.com/vimwiki/vimwiki#intro)

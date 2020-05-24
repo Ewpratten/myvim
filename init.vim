@@ -14,6 +14,10 @@ set expandtab
 " Force VIM to use system clipboard
 set clipboard=unnamedplus
 
+" Enable per-project vimrc files
+set exrc
+set secure
+
 " ~~~~ Keybinds ~~~~
 
 " Open file explorer
@@ -37,6 +41,11 @@ command FRCSimulate :!./run-simulation.sh
 command ViewDef :YcmCompleter GoToDefinition
 command ViewImpl :YcmCompleter GoToImplementation
 command ViewRef :YcmCompleter GoToReferences
+
+" VIM Sessions
+command Sess :mksession! ./.vimsession
+command Seso :source ./.vimsession
+command ReloadRC :source $MYVIMRC
 
 
 " ~~~~ Plugins ~~~~
@@ -116,10 +125,26 @@ Plug 'jiangmiao/auto-pairs'
 " Personal Wiki
 Plug 'vimwiki/vimwiki'
 
+" Color theme
+Plug 'sainnhe/forest-night'
+
+" Polyglot
+" Plug 'sheerun/vim-polyglot'
+
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Initialize plugin system
 call plug#end()
 
 " ~~~~ Plugin Config ~~~~
+
+" Color scheme
+set termguicolors
+let g:forest_night_enable_italic = 1
+let g:forest_night_disable_italic_comment = 1
+colorscheme forest-night
+let g:lightline = {'colorscheme' : 'forest_night'}
 
 " Enable filetype plugins
 set nocompatible
@@ -165,3 +190,4 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
