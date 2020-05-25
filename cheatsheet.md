@@ -39,6 +39,7 @@ Misc:
 | `:ViewImpl` | View variable implementation   |
 | `:ViewRef`  | View variable references       |
 | `:MVCS`     | Open my vim cheatsheet in the browser |
+| `:Goyo`     | Toggle zen editor mode |
 
 
 ## Plugins

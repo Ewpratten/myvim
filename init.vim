@@ -50,6 +50,8 @@ command Sess :mksession! ./.vimsession
 command Seso :source ./.vimsession
 command ReloadRC :source $MYVIMRC
 
+" Git
+command Gcq :Git add . | :Git commit -m <f-args> | :Git push
 
 " ~~~~ Plugins ~~~~
 " Don't forget to run :PlugInstall in vim
@@ -136,6 +138,12 @@ Plug 'sainnhe/forest-night'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Dev icons
+Plug 'ryanoasis/vim-devicons'
+
+" Goyo
+Plug 'junegunn/goyo.vim'
 
 " Initialize plugin system
 call plug#end()
